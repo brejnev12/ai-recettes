@@ -2,9 +2,9 @@
 
 Ce projet est une application web pour générer, gérer et consulter des recettes personnalisées à partir d’une IA. 
 
-#### Installation
+### Installation
 
-#### Cloner le projet**
+#### Cloner le projet
 git clone https://github.com/brejnev12/IA-int-gr-e-un-projet-web.git
 cd ai-recettes
 
