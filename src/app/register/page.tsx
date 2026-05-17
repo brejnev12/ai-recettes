@@ -47,6 +47,7 @@ export default function RegisterPage() {
     <main className="flex min-h-screen items-center justify-center bg-slate-950 text-white">
       <div className="w-full max-w-md space-y-6 rounded-xl border border-slate-800 p-8">
         <h1 className="text-3xl font-bold">Compte</h1>
+
         <input
           type="email"
           placeholder="Email"
@@ -70,6 +71,25 @@ export default function RegisterPage() {
         >
           {loading ? "Chargement..." : "Créer un compte"}
         </button>
+
+        <p className="text-center text-sm text-slate-400">
+          Déjà un compte ?{" "}
+          <span
+            onClick={() => router.push("/login")}
+            className="cursor-pointer text-white underline"
+          >
+            Se connecter
+          </span>
+        </p>
+
+        <p className="text-center text-sm text-slate-400">
+          <span
+            onClick={() => router.push("/")}
+            className="cursor-pointer text-white underline"
+          >
+            Retour à l’accueil
+          </span>
+        </p>
       </div>
     </main>
   );
