@@ -46,7 +46,7 @@ export default function RegisterPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-slate-950 text-white">
       <div className="w-full max-w-md space-y-6 rounded-xl border border-slate-800 p-8">
-        <h1 className="text-3xl font-bold">Compte</h1>
+        <h1 className="text-3xl font-bold">Création de compte</h1>
 
         <input
           type="email"
