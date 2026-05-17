@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
 export default function DashboardLayout({
@@ -9,6 +10,22 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkUser = async () => {
+      const { data } = await supabase.auth.getUser();
+
+      if (!data.user) {
+        router.push("/login");
+        return;
+      }
+
+      setLoading(false);
+    };
+
+    checkUser();
+  }, [router]);
 
   const logout = async () => {
     await supabase.auth.signOut();
@@ -24,6 +41,16 @@ export default function DashboardLayout({
     { label: "Profil", path: "/dashboard/profile" },
   ];
 
+
+  if (loading) {
+    return (
+      <div className="flex h-screen items-center justify-center text-white">
+        Vérification utilisateur...
+      </div>
+    );
+  }
+
+ 
   return (
     <div className="flex min-h-screen bg-slate-950 text-white">
       <aside className="w-64 border-r border-slate-800 bg-slate-900 p-4">
@@ -45,7 +72,7 @@ export default function DashboardLayout({
           onClick={logout}
           className="mt-8 w-full rounded bg-red-500 px-3 py-2"
         >
-          Deconnexion
+          Déconnexion
         </button>
       </aside>
 
