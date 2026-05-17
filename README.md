@@ -6,7 +6,7 @@ Ce projet est une application web pour générer, gérer et consulter des recett
 
 #### Cloner le projet
 git clone https://github.com/brejnev12/IA-int-gr-e-un-projet-web.git
-cd ai-recettes
+# cd ai-recettes
 
 #### Installer les dépendances
 npm install
