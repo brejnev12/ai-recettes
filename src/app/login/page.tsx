@@ -59,6 +59,16 @@ export default function LoginPage() {
         >
           {loading ? "Chargement..." : "Se connecter"}
         </button>
+
+        <p className="text-center text-sm text-slate-400">
+          Pas encore de compte ?{" "}
+          <span
+            onClick={() => router.push("/register")}
+            className="cursor-pointer text-white underline"
+          >
+            Enregistrement
+          </span>
+        </p>
       </div>
     </main>
   );
